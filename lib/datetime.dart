@@ -32,6 +32,10 @@ extension DateTimeExtensions on DateTime {
     return difference(DateUtils().now()).inMilliseconds > 0;
   }
 
+  bool get isPast {
+    return !isFuture;
+  }
+
   bool isSameDay(DateTime date) => DateUtils().isSameDay(this, date);
 
   int daysDifference(DateTime date) {

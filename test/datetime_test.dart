@@ -11,8 +11,20 @@ void main() {
   group('DateTime extensions test', () {
     setUp(() {});
 
-    test('First Test', () {
-      DateTime.now().isFuture;
+    test('DateTime', () {
+      final d1 = DateTime.now().add(Duration(minutes: 1));
+      expect(d1.isFuture, true);
+      expect(d1.isPast, false);
+
+      final d2 = DateTime.now().subtract(Duration(minutes: 1));
+      expect(d2.isFuture, false);
+      expect(d2.isPast, true);
+
+      expect(DateTime.now().subtract(Duration(days: 1)).isYesterday, true);
+
+      expect(DateTime.now().subtract(Duration(days: 1)).isThisYear, true);
+
+      expect(DateTime.now().add(Duration(days: 1)).isThisWeek, true);
     });
   });
 }
