@@ -11,7 +11,7 @@ extension IterableExtensions<E> on Iterable<E> {
 
   bool get isNotNullOrEmpty => !isNullOrEmpty;
 
-  List<T> mapToList<T>(T f(E e)) {
+  List<T> mapToList<T>(T Function(E e) f) {
     return map<T>(f).toList();
   }
 }
