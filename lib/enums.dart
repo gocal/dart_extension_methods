@@ -18,7 +18,6 @@ extension IterableExtensions<E> on Object {
     if (dot >= 0) {
       return value.substring(dot + 1);
     }
-
     return null;
   }
 }
