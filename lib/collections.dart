@@ -15,3 +15,11 @@ extension IterableExtensions<E> on Iterable<E> {
     return map<T>(f).toList();
   }
 }
+
+extension ListExtensions<E> on List<E> {
+  bool get isNullOrEmpty => this == null || isEmpty;
+
+  bool get isNotNullOrEmpty => !isNullOrEmpty;
+
+  void swap(int index1, int index2) {}
+}

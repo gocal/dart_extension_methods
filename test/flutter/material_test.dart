@@ -4,16 +4,18 @@
  * BSD-style license that can be found in the LICENSE file.
  */
 
-import 'package:dart_extension_methods/collections.dart';
+import 'package:dart_extension_methods/flutter/material.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Collections extensions test', () {
+  group('Flutter Material extensions test', () {
     setUp(() {});
 
     test('First Test', () {
-      expect([1, 2, 3].isNotNullOrEmpty, true);
-      expect([1, 2, 3].mapToList((value) => value > 1) is List, true);
+      expect(1.q, 8);
+      expect(1.column, 8);
+      expect(1.gutter, 8);
+      expect(1.margin, 8);
     });
   });
 }

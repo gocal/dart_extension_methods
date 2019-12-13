@@ -4,12 +4,17 @@
  * BSD-style license that can be found in the LICENSE file.
  */
 
+import 'package:dart_extension_methods/enums.dart';
 import 'package:test/test.dart';
 
+enum TestEnum { one, two, three }
+
 void main() {
-  group('A group of tests', () {
+  group('Enums extensions test', () {
     setUp(() {});
 
-    test('First Test', () {});
+    test('First Test', () {
+      expect(TestEnum.one.enumDescribe, 'one');
+    });
   });
 }

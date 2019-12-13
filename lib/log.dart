@@ -35,4 +35,18 @@ enum LogExtensionsLogLevel {
 }
 
 void logMessage(LogExtensionsLogLevel level, Object classTag, String message,
-    [dynamic error, StackTrace stackTrace]) {}
+    [dynamic error, StackTrace stackTrace]) {
+  if (logDelegate != null) {
+    logDelegate(level, classTag, message, error, stackTrace);
+  }
+}
+
+typedef LogDelegate = void Function(
+    LogExtensionsLogLevel level, Object classTag, String message,
+    [dynamic error, StackTrace stackTrace]);
+
+LogDelegate logDelegate;
+
+void setLogDelegate(LogDelegate delegate) {
+  logDelegate = delegate;
+}
